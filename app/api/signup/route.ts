@@ -6,7 +6,7 @@ type Data = { message: string } | { error: string };
 export async function POST(request: Request) {
     try {
         const { email, password,firstname,lastname } = await request.json();
-        const { user, error } = await supabase.auth.signUp({
+        const { error } = await supabase.auth.signUp({
             email,
             password,
         });
